@@ -3,13 +3,62 @@
 <head>
    <title>Image Toggle Example</title>
    <style>
+      body {
+         font-family: Arial, sans-serif;
+         text-align: center;
+      }
+      .image-container {
+         position: relative;
+         display: inline-block;
+      }
+      .image-text {
+         position: absolute;
+         top: 10px;
+         left: 50%;
+         transform: translateX(-50%);
+         color: white;
+         font-size: 24px;
+         font-weight: bold;
+         text-shadow: 2px 2px 5px black;
+      }
       img {
          cursor: pointer;
+         width: 400px;
+         border-radius: 10px;
+      }
+      #comments {
+         margin-top: 20px;
+         max-width: 500px;
+         margin-left: auto;
+         margin-right: auto;
+         text-align: left;
+      }
+      #commentList {
+         list-style-type: none;
+         padding: 0;
+      }
+      #commentList li {
+         background: #f0f0f0;
+         margin: 5px 0;
+         padding: 8px;
+         border-radius: 5px;
       }
    </style>
 </head>
 <body>
-   <img id="toggleImage" src="Zombatar_2.jpg" alt="ULTRAKILL.jpg" width="400">
+   <div class="image-container">
+      <img id="toggleImage" src="Zombatar_2.jpg" alt="ULTRAKILL.jpg">
+      <div class="image-text">Page of bainur</div>
+   </div>
+
+   <div id="comments">
+      <h2>comments:</h2>
+      <form id="commentForm">
+         <textarea id="commentInput" rows="3" style="width:100%;" placeholder="leave a comment  ..."></textarea><br>
+         <button type="submit">add</button>
+      </form>
+      <ul id="commentList"></ul>
+   </div>
 
    <script>
       const img = document.getElementById("toggleImage");
@@ -17,15 +66,32 @@
 
       img.addEventListener("click", function() {
          if (isFirst) {
-            img.src = "Zombatar_2.jpg"; // вторая картинка
+            img.src = "Zombatar_2.jpg";
          } else {
-            img.src = "ULTRAKILL.jpg"; // обратно первая
+            img.src = "ULTRAKILL.jpg";
          }
-         isFirst = !isFirst; // переключаем состояние
+         isFirst = !isFirst;
+      });
+
+    
+      const commentForm = document.getElementById("commentForm");
+      const commentInput = document.getElementById("commentInput");
+      const commentList = document.getElementById("commentList");
+
+      commentForm.addEventListener("submit", function(e) {
+         e.preventDefault();
+         const text = commentInput.value.trim();
+         if (text !== "") {
+            const li = document.createElement("li");
+            li.textContent = text;
+            commentList.appendChild(li);
+            commentInput.value = "";
+         }
       });
    </script>
 </body>
 </html>
+
 
 
 
