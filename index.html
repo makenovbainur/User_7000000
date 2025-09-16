@@ -1,62 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>viewer comments</title>
-  <style>
-    .header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%; /* делаем круглую аватарку */
-      object-fit: cover;
-      border: 3px solid #444;
-    }
-  </style>
+   <title>Image Map Example</title>
 </head>
 <body>
-  <div class="header">
-    <h1>Page of Bainur</h1>
-    <!-- здесь твоя постоянная картинка -->  </div>
-      <img src="Zombatar_2.jpg" alt="PvZ" alihn="center">
-  <h2>leave a comment:</h2>
-  <form id="commentForm">
-    <textarea id="commentInput" rows="4" cols="50" placeholder="Напишите комментарий..."></textarea><br>
-    <button type="submit">send</button>
-  </form>
-
-  <h2>comments:</h2>
-  <div id="comments"></div>
-
-  <script>
-    const form = document.getElementById("commentForm");
-    const input = document.getElementById("commentInput");
-    const commentsDiv = document.getElementById("comments");
-
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-      const commentText = input.value.trim();
-      if (commentText) {
-        const newComment = document.createElement("p");
-        newComment.textContent = commentText;
-        commentsDiv.appendChild(newComment);
-        input.value = "";
-      }
-    });
-  </script>
+   <img src="/images/logo.png" usemap="#image_map">
+   <map name="image_map">
+      <!-- Define your clickable areas here -->
+      <area shape="circle" coords="45,32,49" href="/index.htm" alt="tutorialspoint">
+      <area shape="rect" coords="245,50,85,9" href="/tutorialslibrary.htm" alt="tutorials_library">
+   </map>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 
