@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Image Map Example</title>
+   <title>Image Toggle Example</title>
+   <style>
+      img {
+         cursor: pointer;
+      }
+   </style>
 </head>
 <body>
-   <img src="/images/logo.png" usemap="#image_map">
-   <map name="image_map">
-      <!-- Define your clickable areas here -->
-      <area shape="circle" coords="45,32,49" href="/index.htm" alt="tutorialspoint">
-      <area shape="rect" coords="245,50,85,9" href="/tutorialslibrary.htm" alt="tutorials_library">
-   </map>
+   <img id="toggleImage" src="image1.jpg" alt="Переключаемая картинка" width="400">
+
+   <script>
+      const img = document.getElementById("toggleImage");
+      let isFirst = true;
+
+      img.addEventListener("click", function() {
+         if (isFirst) {
+            img.src = "Zombatar_2.jpg"; // вторая картинка
+         } else {
+            img.src = "image1.jpg"; // обратно первая
+         }
+         isFirst = !isFirst; // переключаем состояние
+      });
+   </script>
 </body>
 </html>
-
-
-
-
 
 
 
