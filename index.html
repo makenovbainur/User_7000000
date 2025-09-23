@@ -1,132 +1,23 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Image Toggle Example</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #222;
-      color: #fff;
-    }
-
-    .image-container {
-      position: relative;
-      display: inline-block;
-      margin-top: 20px;
-    }
-
-    .image-text {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px black;
-    }
-
-    img {
-      cursor: pointer;
-      width: 400px;
-      border-radius: 10px;
-    }
-
-    #comments {
-      margin-top: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-    }
-
-    #commentList {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    #commentList li {
-      background: #444;
-      padding: 8px;
-      margin: 5px 0;
-      border-radius: 5px;
-    }
-
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      resize: none;
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 8px 15px;
-      border: none;
-      border-radius: 5px;
-      background: #00aaff;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #0088cc;
-    }
-  </style>
+   <title>The list Attribute</title>
 </head>
 <body>
-  <h1>Пример с картинкой и комментариями</h1>
-
-
-  <div class="image-container">
-    <img id="toggleImage" src="Zombatar_2.jpg" alt="ULTRAKILL.jpg">
-    <div class="image-text">Надпись поверх картинки</div>
-  </div>
-
-
-  <div id="comments">
-    <h2>Комментарии зрителей:</h2>
-    <ul id="commentList">
-      <li>Первый комментарий</li>
-      <li>Второй комментарий</li>
-    </ul>
-
-    <textarea id="commentInput" rows="3" placeholder="Оставьте свой комментарий..."></textarea>
-    <button onclick="addComment()">Добавить</button>
-  </div>
-
-  <script>
-
-    const img = document.getElementById("toggleImage");
-    let isFirst = true;
-    img.addEventListener("click", () => {
-      if (isFirst) {
-        img.src = "ULTRAKILL.jpg";
-      } else {
-        img.src = "Zombatar_2.jpg";
-      }
-      isFirst = !isFirst;
-    });
-
-
-    function addComment() {
-      const input = document.getElementById("commentInput");
-      const text = input.value.trim();
-      if (text !== "") {
-        const li = document.createElement("li");
-        li.textContent = text;
-        document.getElementById("commentList").appendChild(li);
-        input.value = "";
-      }
-    }
-  </script>
+   <form >
+      Emp. Name: <input type = "text" name = "your_name" autofocus/>
+      <br><br>
+      Emp. Email: <input type = "email" name = "mail" placeholder = "example@email.com" />
+      <br><br>
+      Location −
+      <input list="location" name="cities">
+         <datalist id = "location">
+            <option value="Banglore">
+            <option value="Hyderabad">
+            <option value="Patna">
+            <option value="Delhi">
+         </datalist>
+      <input type = "submit">
+   </form>
 </body>
 </html>
-
-
-
-
-
