@@ -4,7 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+<style>
+    * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Arial;
+   text-align: center;
+}
+body{
+    background-color: aliceblue;
+}
+
+.header{
+    background: lightgreen;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.navbar{
+    background-color: antiquewhite;
+    border-top: 1px soild black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    font-weight: bold;
+}
+.container{
+    display: flex;
+    height:500px;
+}
+.sidebar{
+flex: 1;
+background-color: greenyellow;
+padding:  20px;
+border-right: 1px solid green;
+}
+
+.main{
+    flex: 3;
+    background-color: blueviolet;
+    padding: 20px;
+}
+
+.footer{
+    background-color: white;
+    border-top: 1px soild black;
+    padding: bold;
+    font-weight: bold;
+}
+</style>
 </head>
 <body>
     <Header class="header"> Bainur's Homepage </Header>
